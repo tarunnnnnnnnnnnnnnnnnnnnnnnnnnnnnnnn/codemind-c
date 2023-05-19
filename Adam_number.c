@@ -1,30 +1,23 @@
 #include<stdio.h>
-int adam(int);
 int main()
 {
-    int n,i,s1,s2,a,b;
+    int n,a,b,rev=0,r,rev1=0,r1;
     scanf("%d",&n);
-    a=adam(n);
-    s1=n*n;
-    s2=a*a;
-    b=adam(s2);
-    if(s1==b)
-    {
-        printf("True");
-    }
-    else
-    {
-        printf("False");
-    }
-}
-int adam(int n)
-{
-    int r,rev=0;
+    a=n*n;
     while(n>0)
     {
-        r=n%10;
-        rev=rev*10+r;
+        r=n%10;rev=rev*10+r;
         n=n/10;
     }
-    return rev;
+    b=rev*rev;
+    while(b>0)
+    {
+        r1=b%10;
+        rev1=rev1*10+r1;
+        b=b/10;
+    }
+    if(a==rev1)
+    printf("True");
+    else
+    printf("False");
 }
