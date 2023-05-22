@@ -6,10 +6,10 @@ int main()
     if(m%2==0 || n%2==0)
     {
         printf("Player 1");
-        
     }
     else
     {
         printf("Player 2");
     }
 }
+    
