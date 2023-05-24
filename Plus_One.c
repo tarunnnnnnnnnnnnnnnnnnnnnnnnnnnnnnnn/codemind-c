@@ -13,7 +13,8 @@ int main()
     int temp=t,d=0;
     while(temp)
     {
-        temp/=10;d++;
+        temp/=10;
+        d++;
     }
     int a[d];
     for(i=0;i<d;i++)
