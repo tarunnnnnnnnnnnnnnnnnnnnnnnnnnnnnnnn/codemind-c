@@ -1,46 +1,58 @@
 #include<stdio.h>
+int prime(int a)
+{
+    int c=0;
+    for(int i=1;i<=a;i++)
+    {
+        if(a%i==0)
+        {
+            c++;
+        }
+    }
+    if(c==2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 int main()
 {
     int n;
     scanf("%d",&n);
-    int a[n],i,j,t,pre,post;
-    for(i=0;i<n;i++)
+    for(int i=1;i<=n;i++)
     {
-        scanf("%d",&a[i]);
-        }
-        for(i=0;i<n;i++)
-        {t=a[i];
-        while(1)
-        {for(j=2;j<=t;j++) 
-        if(t%j==0)
-        break;
-        if(j==t)
+        int a,f,b;
+        scanf("%d",&a);
+        for(int i=a;;i++)
         {
-            pre=t;
-            break;
+            if(prime(i))
+            {
+                f=i;
+                break;
+            }
+        }
+        for(int i=a;;i--)
+        {
+            if(prime(i))
+            {
+                b=i;
+                break;
+            }
+        }
+        int d1=f-a;
+        int d2=a-b;
+        if(d1>=d2)
+        {
+            printf("%d
+",b);
         }
         else
-        t--;
-         }
-         t=a[i];
-         while(1)
-         {
-             for(j=2;j<=t;j++) 
-             if(t%j==0)
-             break;
-             if(j==t)
-             {
-                 post=t;
-                 break;
-             }else
-             t++;
-         }
-         if((a[i]-pre)<=(post-a[i]))
-         printf("%d
-",pre);
-         else if((a[i]-pre)>(post-a[i]))
-         printf("%d
-",post);
-         else if(pre==post)
-         printf("%d
-",a[i]);}}
+        {
+            printf("%d
+",f);
+        }
+    }
+}
