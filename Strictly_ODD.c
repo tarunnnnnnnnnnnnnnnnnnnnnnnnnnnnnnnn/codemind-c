@@ -10,20 +10,20 @@ int main()
     }
     for(i=0;i<n;i++)
     {
-        if(a[i]%2==1)
-    {
-        c++;
-    }
+        if(a[i]%2==0)
+        {
+            c++;
+        }
     }
     for(i=0;i<n;i++)
     {
-        if(a[i]%2==1 && i%2==1)
-    {
-        s++;
+        if(a[i]%2==0 && i%2==0)
+        {
+            s++;
+        }
     }
-    }
-    if(s==c)
-    printf("True");
-    else
+    if(s!=c)
     printf("False");
+    else
+    printf("True");
 }
